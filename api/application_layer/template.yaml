@@ -1,0 +1,15 @@
+Transform: 'AWS::Serverless-2016-10-31'
+Resources:
+  RootFunction:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Runtime: nodejs8.10
+      Handler: index.handler
+      CodeUri: ./
+      Events:
+        TradingJournalAPI:
+            Type: Api
+            Properties:
+                AuthorizationType: none
+                Path: /{proxy+}
+                Method: '*'

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [ "$(docker images -q trading_journal_db:latest)" == "" ] 
+  then 
+    echo "You must build the Docker image for trading_journal_db first before running this script."
+    echo "Run the following command from inside the directory that contains the Dockerfile for this image:"
+    echo "docker build -t trading_journal_db:latest . "
+    exit 1
+fi
+
+CONTAINER_ID="$(docker ps | grep trading_journal_db:latest | awk '{ print $1 }' )"
+
+if [ ! $CONTAINER_ID == "" ]
+  then 
+    docker stop $CONTAINER_ID
+    docker rm $CONTAINER_ID
+fi
+
+docker run -p 8000:8000 trading_journal_db:latest &
+
+cd application_layer && sam local start-api 

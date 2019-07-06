@@ -69,10 +69,10 @@ export function HomePage({
       <div>
         <CenteredSection>
           <H2>
-            <FormattedMessage {...messages.startProjectHeader} />
+            Trading Journal
           </H2>
           <p>
-            <FormattedMessage {...messages.startProjectMessage} />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
           </p>
         </CenteredSection>
         <Section>

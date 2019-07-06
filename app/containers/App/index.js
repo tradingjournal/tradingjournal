@@ -32,10 +32,10 @@ export default function App() {
   return (
     <AppWrapper>
       <Helmet
-        titleTemplate="%s - React.js Boilerplate"
-        defaultTitle="React.js Boilerplate"
+        titleTemplate="%s - Trading Journal"
+        defaultTitle="Trading Journal"
       >
-        <meta name="description" content="A React.js Boilerplate application" />
+        <meta name="description" content="A journal for traders" />
       </Helmet>
       <Header />
       <Switch>

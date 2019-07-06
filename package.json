@@ -1,7 +1,7 @@
 {
-  "name": "react-boilerplate",
-  "version": "4.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "trading-journal",
+  "version": "0.0.1",
+  "description": "A journal for traders",
   "repository": {
     "type": "git",
     "url": "git://github.com/react-boilerplate/react-boilerplate.git"
@@ -10,7 +10,7 @@
     "npm": ">=5",
     "node": ">=8.15.1"
   },
-  "author": "Max Stoiber",
+  "author": "Jon Cho, Jack Han, Shayaun Nejad",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -22,10 +22,10 @@
     "prebuild": "npm run build:clean",
     "build": "cross-env NODE_ENV=production webpack --config internals/webpack/webpack.prod.babel.js --color -p --progress --hide-modules --display-optimization-bailout",
     "build:clean": "rimraf ./build",
-    "start": "cross-env NODE_ENV=development node server",
-    "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node server",
+    "start": "cross-env NODE_ENV=development node web_server",
+    "start:tunnel": "cross-env NODE_ENV=development ENABLE_TUNNEL=true node web_server",
     "start:production": "npm run test && npm run build && npm run start:prod",
-    "start:prod": "cross-env NODE_ENV=production node server",
+    "start:prod": "cross-env NODE_ENV=production node web_server",
     "presetup": "npm i chalk shelljs",
     "setup": "node ./internals/scripts/setup.js",
     "clean": "shjs ./internals/scripts/clean.js",
